@@ -117,7 +117,7 @@ def get_monthly_amount(
         raise HTTPException(status_code=404, detail=exceptions.DetailsForHTTPExceptions.UserIsNoneException)
     except exceptions.UserHasNoSubsException:
         raise HTTPException(status_code=404, detail=exceptions.DetailsForHTTPExceptions.UserHasNoSubsException)
-    return monthly_amount
+    return AmountResponse(month_count=1, amount=monthly_amount)
 
 
 @router.get(path="/subs/annual-amount", tags=["subs"], response_model=AmountResponse)
@@ -132,7 +132,7 @@ def get_annual_amount(
         raise HTTPException(status_code=404, detail=exceptions.DetailsForHTTPExceptions.UserIsNoneException)
     except exceptions.UserHasNoSubsException:
         raise HTTPException(status_code=404, detail=exceptions.DetailsForHTTPExceptions.UserHasNoSubsException)
-    return annual_amount
+    return AmountResponse(month_count=12, amount=annual_amount)
 
 #endregion
 
