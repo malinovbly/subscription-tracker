@@ -5,11 +5,12 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
 import src.exceptions as exceptions
-from src.schemas import NewSub, Sub, Category, Ok, AmountResponse
+from src.schemas import NewSub, Sub, Ok, AmountResponse
 from src.db import get_db
 from src.crud import (get_db_user, create_new_sub, get_db_sub, delete_db_sub, delete_all_user_db_subs,
                       get_next_payment_db_sub, count_monthly_amount)
 from src.utils import make_scheme_from_submodel
+from src.constants import Category
 
 
 router = APIRouter()

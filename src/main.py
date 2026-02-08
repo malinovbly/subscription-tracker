@@ -14,5 +14,3 @@ app = FastAPI(global_tags=GLOBAL_TAGS)
 app.include_router(main_router)
 
 create_db()
-
-#TODO: postgres, docker, docker-compose

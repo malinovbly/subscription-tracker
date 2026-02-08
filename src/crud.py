@@ -3,7 +3,6 @@ from typing import Optional
 from datetime import date
 from dateutil.relativedelta import relativedelta
 
-from sqlalchemy import select, func
 from sqlalchemy.orm import Session
 
 import src.exceptions as exceptions

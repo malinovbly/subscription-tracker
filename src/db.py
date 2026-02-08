@@ -5,12 +5,18 @@ from sqlalchemy.orm import sessionmaker
 from src.models import Base, SubModel, UserModel
 
 
-SQLALCHEMY_DATABASE_URL = "sqlite:///test.db"
+#region sqlite
+# SQLALCHEMY_DATABASE_URL = "sqlite:///test.db"
+# engine = create_engine(
+#     SQLALCHEMY_DATABASE_URL,
+#     connect_args={"check_same_thread": False}  # it's for sqlite only
+# )
+#endregion
 
-engine = create_engine(
-    SQLALCHEMY_DATABASE_URL,
-    connect_args={"check_same_thread": False}  # it's for sqlite only
-)
+#region mysql
+SQLALCHEMY_DATABASE_URL = "mysql+mysqlconnector://root:1234@db:3306/subs_db"
+engine = create_engine(SQLALCHEMY_DATABASE_URL)
+#endregion
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 

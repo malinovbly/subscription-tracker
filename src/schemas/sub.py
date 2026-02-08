@@ -1,18 +1,11 @@
 #src/schemas/sub.py
 from typing import Annotated
 from datetime import date
-from enum import Enum
 
 from pydantic import BaseModel, Field, field_validator
 from pydantic.types import StringConstraints
 
-from src.constants import MIN_SUB_NAME_LENGTH, MAX_SUB_NAME_LENGTH, MIN_SUB_COST, MIN_MONTH_COUNT
-
-
-class Category(str, Enum):
-    WORK = "WORK"
-    ENTERTAINMENT = "ENTERTAINMENT"
-    OTHER = "OTHER"
+from src.constants import MIN_SUB_NAME_LENGTH, MAX_SUB_NAME_LENGTH, MIN_SUB_COST, MIN_MONTH_COUNT, Category
 
 
 class Sub(BaseModel):

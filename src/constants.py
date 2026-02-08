@@ -1,4 +1,7 @@
 #src/constants.py
+from enum import Enum
+
+
 MIN_SUB_NAME_LENGTH = 3
 MAX_SUB_NAME_LENGTH = 30
 MIN_SUB_COST = 0.0
@@ -6,3 +9,9 @@ MIN_MONTH_COUNT = 1
 
 MIN_USER_NAME_LENGTH = 3
 MAX_USER_NAME_LENGTH = 20
+
+
+class Category(str, Enum):
+    WORK = "WORK"
+    ENTERTAINMENT = "ENTERTAINMENT"
+    OTHER = "OTHER"
